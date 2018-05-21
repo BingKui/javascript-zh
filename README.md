@@ -121,7 +121,7 @@
   <a name="references--disallow-var"></a><a name="2.2"></a>
   - [2.2](#references--disallow-var) 如果你必须重新分配你的引用， 使用 `let` 代替 `var`。 eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
 
-    > 为什么? `let` is block-scoped rather than function-scoped like `var`.
+    > 为什么? `let` 是块级作用域，而不像 `var` 是函数作用域.
 
     ```javascript
     // bad
@@ -671,7 +671,7 @@
   - [7.3](#functions--in-blocks) 切记不要在非功能块中声明函数 (`if`, `while`, 等)。 将函数赋值给变量。 浏览器允许你这样做，但是他们都有不同的解释，这是个坏消息。 eslint: [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func.html)
 
   <a name="functions--note-on-blocks"></a><a name="7.4"></a>
-  - [7.4](#functions--note-on-blocks) **注意:** ECMA-262 将 `block` 定义为语句列表。 函数生命不是语句。
+  - [7.4](#functions--note-on-blocks) **注意:** ECMA-262 将 `block` 定义为语句列表。 函数声明不是语句。
 
     ```javascript
     // bad
@@ -912,14 +912,14 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Arrow Functions
+## <a id="arrow-functions">箭头函数</a>
 
   <a name="arrows--use-them"></a><a name="8.1"></a>
-  - [8.1](#arrows--use-them) When you must use an anonymous function (as when passing an inline callback), use arrow function notation. eslint: [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](https://eslint.org/docs/rules/arrow-spacing.html)
+  - [8.1](#arrows--use-them) 当你必须使用匿名函数时 (当传递内联函数时)， 使用箭头函数。 eslint: [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](https://eslint.org/docs/rules/arrow-spacing.html)
 
-    > 为什么? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+    > 为什么? 它创建了一个在 `this` 上下文中执行的函数版本，它通常是你想要的，并且是一个更简洁的语法。
 
-    > Why not? If you have a fairly complicated function, you might move that logic out into its own named function expression.
+    > 为什么不? 如果你有一个相当复杂的函数，你可以把这个逻辑转移到它自己的命名函数表达式中。
 
     ```javascript
     // bad
@@ -936,9 +936,9 @@
     ```
 
   <a name="arrows--implicit-return"></a><a name="8.2"></a>
-  - [8.2](#arrows--implicit-return) If the function body consists of a single statement returning an [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) without side effects, omit the braces and use the implicit return. Otherwise, keep the braces and use a `return` statement. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
+  - [8.2](#arrows--implicit-return) 如果函数体包含一个单独的语句，返回一个没有副作用的 [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) ， 省略括号并使用隐式返回。否则，保留括号并使用 `return` 语句。 eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
 
-    > 为什么? Syntactic sugar. It reads well when multiple functions are chained together.
+    > 为什么? 语法糖。 多个函数被链接在一起时，提高可读性。
 
     ```javascript
     // bad
@@ -961,11 +961,11 @@
       [index]: number,
     }));
 
-    // No implicit return with side effects
+    // 没有副作用的隐式返回
     function foo(callback) {
       const val = callback();
       if (val === true) {
-        // Do something if callback returns true
+        // 如果回调返回 true 执行
       }
     }
 
@@ -981,9 +981,9 @@
     ```
 
   <a name="arrows--paren-wrap"></a><a name="8.3"></a>
-  - [8.3](#arrows--paren-wrap) In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+  - [8.3](#arrows--paren-wrap) 如果表达式跨越多个行，用括号将其括起来，以获得更好的可读性。
 
-    > 为什么? It shows clearly where the function starts and ends.
+    > 为什么? 它清楚地显示了函数的起点和终点。
 
     ```javascript
     // bad
@@ -3468,41 +3468,42 @@
 ## ECMAScript 6+ (ES 2015+) Styles
 
   <a name="es6-styles"></a><a name="27.1"></a>
-  - [28.1](#es6-styles) This is a collection of links to the various ES6+ features.
+  - [28.1](#es6-styles) 这是一个链接到各种 ES6+ 特性的集合。
 
-1. [Arrow Functions](#arrow-functions)
-1. [Classes](#classes--constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
+1. [箭头函数](#arrow-functions)
+1. [类](#classes--constructors)
+1. [对象简写](#es6-object-shorthand)
+1. [对象简洁](#es6-object-concise)
+1. [对象计算属性](#es6-computed-properties)
+1. [字符串模板](#es6-template-literals)
+1. [解构](#destructuring)
+1. [默认参数](#es6-default-parameters)
 1. [Rest](#es6-rest)
-1. [Array Spreads](#es6-array-spreads)
-1. [Let and Const](#references)
-1. [Exponentiation Operator](#es2016-properties--exponentiation-operator)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+1. [数组展开](#es6-array-spreads)
+1. [Let 和 Const](#references)
+1. [求幂运算符](#es2016-properties--exponentiation-operator)
+1. [迭代器和发生器](#iterators-and-generators)
+1. [模块](#modules)
 
   <a name="tc39-proposals"></a>
-  - [28.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
+  - [28.2](#tc39-proposals) 不要使用尚未达到第3阶段的 [TC39 建议](https://github.com/tc39/proposals)。
 
-    > 为什么? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+    > 为什么? [它们没有最终确定](https://tc39.github.io/process-document/)， 并且它们可能会被改变或完全撤回。我们希望使用JavaScript，而建议还不是JavaScript。
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Standard Library
+## <a id="standard-library">标准库</a>
 
-  The [Standard Library](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
-  contains utilities that are functionally broken but remain for legacy reasons.
+  [标准库](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
+  包含功能已损坏的实用工具，但因为遗留原因而保留。
 
   <a name="standard-library--isnan"></a>
-  - [29.1](#standard-library--isnan) Use `Number.isNaN` instead of global `isNaN`.
+  - [29.1](#standard-library--isnan) 使用 `Number.isNaN` 代替全局的 `isNaN`.
     eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
 
-    > 为什么? The global `isNaN` coerces non-numbers to numbers, returning true for anything that coerces to NaN.
-    > If this behavior is desired, make it explicit.
+    > 为什么? 全局的 `isNaN` 强制非数字转化为数字，对任何强制转化为 NaN 的东西都返回 true。
+
+    > 如果需要这种行为，请明确说明。
 
     ```javascript
     // bad
@@ -3515,11 +3516,12 @@
     ```
 
   <a name="standard-library--isfinite"></a>
-  - [29.2](#standard-library--isfinite) Use `Number.isFinite` instead of global `isFinite`.
+  - [29.2](#standard-library--isfinite) 使用 `Number.isFinite` 代替全局的 `isFinite`.
     eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
 
-    > 为什么? The global `isFinite` coerces non-numbers to numbers, returning true for anything that coerces to a finite number.
-    > If this behavior is desired, make it explicit.
+    > 为什么? 全局的 `isFinite` 强制非数字转化为数字，对任何强制转化为有限数字的东西都返回 true。
+
+    > 如果需要这种行为，请明确说明。
 
     ```javascript
     // bad
@@ -3535,7 +3537,7 @@
 ## Testing
 
   <a name="testing--yup"></a><a name="28.1"></a>
-  - [30.1](#testing--yup) **Yup.**
+  - [30.1](#testing--yup) **是的.**
 
     ```javascript
     function foo() {
@@ -3544,17 +3546,17 @@
     ```
 
   <a name="testing--for-real"></a><a name="28.2"></a>
-  - [30.2](#testing--for-real) **No, but seriously**:
-    - Whichever testing framework you use, you should be writing tests!
-    - Strive to write many small pure functions, and minimize where mutations occur.
-    - Be cautious about stubs and mocks - they can make your tests more brittle.
-    - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) and [`jest`](https://www.npmjs.com/package/jest) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-    - 100% test coverage is a good goal to strive for, even if it’s not always practical to reach it.
-    - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
+  - [30.2](#testing--for-real) **没有，但是认真**:
+    - 无论你使用那种测试框架，都应该编写测试！
+    - 努力写出许多小的纯函数，并尽量减少发生错误的地方。
+    - 对于静态方法和 mock 要小心----它们会使你的测试更加脆弱。
+    - 我们主要在 Airbnb 上使用 [`mocha`](https://www.npmjs.com/package/mocha) 和 [`jest`](https://www.npmjs.com/package/jest) 。 [`tape`](https://www.npmjs.com/package/tape) 也会用在一些小的独立模块上。
+    - 100%的测试覆盖率是一个很好的目标，即使它并不总是可行的。
+    - 无论何时修复bug，都要编写一个回归测试。在没有回归测试的情况下修复的bug在将来几乎肯定会再次崩溃。
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Performance
+## <a id="performance">性能</a>
 
   - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
@@ -3568,41 +3570,41 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Resources
+## <a id="resources">资源</a>
 
-**Learning ES6+**
+**学习 ES6+**
 
   - [Latest ECMA spec](https://tc39.github.io/ecma262/)
   - [ExploringJS](http://exploringjs.com/)
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
 
-**Read This**
+**读这个**
 
   - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
 
-**Tools**
+**工具**
 
   - Code Style Linters
     - [ESlint](https://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
     - [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
   - Neutrino preset - [neutrino-preset-airbnb-base](https://neutrino.js.org/presets/neutrino-preset-airbnb-base/)
 
-**Other Style Guides**
+**其他编码规范**
 
   - [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
   - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
   - [StandardJS](https://standardjs.com)
 
-**Other Styles**
+**其他风格**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
   - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
   - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
-**Further Reading**
+**进一步阅读**
 
   - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
@@ -3610,7 +3612,7 @@
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
-**Books**
+**书籍**
 
   - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -3629,7 +3631,7 @@
   - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
   - [You Don’t Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-**Blogs**
+**博客**
 
   - [JavaScript Weekly](http://javascriptweekly.com/)
   - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
@@ -3641,16 +3643,16 @@
   - [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
   - [nettuts](http://code.tutsplus.com/?s=javascript)
 
-**Podcasts**
+**播客**
 
   - [JavaScript Air](https://javascriptair.com/)
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## In the Wild
+## <a id="in-the-wild">使用者</a>
 
-  This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
+  这是一个使用此样式指南的组织列表。给我们发送一个拉请求，我们会把你添加到列表中。
 
   - **123erfasst**: [123erfasst/javascript](https://github.com/123erfasst/javascript)
   - **3blades**: [3Blades](https://github.com/3blades)
@@ -3746,9 +3748,9 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Translation
+## <a id="translation">翻译</a>
 
-  This style guide is also available in other languages:
+  这套规范同样也有其他语言的版本：
 
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
@@ -3767,23 +3769,23 @@
   - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript)
   - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [hngiang/javascript-style-guide](https://github.com/hngiang/javascript-style-guide)
 
-## The JavaScript Style Guide Guide
+## <a id="the-javascript-style-guide-guide">JavaScript风格指南的指南</a>
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## Chat With Us About JavaScript
+## <a id="chat-with-us-about-javascript">和我们聊聊JavaScript</a>
 
   - Find us on [gitter](https://gitter.im/airbnb/javascript).
 
-## Contributors
+## <a id="contributors">贡献</a>
 
   - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
 
-## License
+## <a id="license">许可证</a>
 
 (The MIT License)
 
-Copyright (c) 2012 Airbnb
+Copyright (c) 2012 康兵奎
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -3806,8 +3808,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Amendments
+## <a id="amendments">修正案</a>
 
-We encourage you to fork this guide and change the rules to fit your team’s style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
+我们鼓励您使用此指南并更改规则以适应您的团队的风格指南。下面，你可以列出一些对风格指南的修正。这允许您定期更新您的样式指南，而不必处理合并冲突。
 
 # };
