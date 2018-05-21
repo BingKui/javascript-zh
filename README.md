@@ -234,9 +234,9 @@
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) 在对象声明的时候将简写的属性进行分组。
+  - [3.5](#objects--grouped-shorthand) 在对象声明的时候将简写的属性进行分组。
 
-    > 为什么? 这样更容易的判断哪些属性使用的简写。
+    > 为什么? 这样更容易的判断哪些属性使用的简写。
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
@@ -264,7 +264,7 @@
     ```
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
-  - [3.6](#objects--quoted-props) 只使用引号标注无效标识符的属性。 eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
+  - [3.6](#objects--quoted-props) 只使用引号标注无效标识符的属性。 eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
 
     > 为什么? 总的来说，我们认为这样更容易阅读。 它提升了语法高亮显示，并且更容易通过许多 JS 引擎优化。
     ```javascript
