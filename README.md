@@ -1003,9 +1003,9 @@
     ```
 
   <a name="arrows--one-arg-parens"></a><a name="8.4"></a>
-  - [8.4](#arrows--one-arg-parens) If your function takes a single argument and doesn’t use braces, omit the parentheses. Otherwise, always include parentheses around arguments for clarity and consistency. Note: it is also acceptable to always use parentheses, in which case use the [“always” option](https://eslint.org/docs/rules/arrow-parens#always) for eslint. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html)
+  - [8.4](#arrows--one-arg-parens) 如果你的函数接收一个参数，则可以不用括号，省略括号。 否则，为了保证清晰和一致性，需要在参数周围加上括号。 注意：总是使用括号是可以接受的，在这种情况下，我们使用 [“always” option](https://eslint.org/docs/rules/arrow-parens#always) 来配置 eslint. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html)
 
-    > 为什么? Less visual clutter.
+    > 为什么? 减少视觉上的混乱。
 
     ```javascript
     // bad
@@ -1033,7 +1033,7 @@
     ```
 
   <a name="arrows--confusing"></a><a name="8.5"></a>
-  - [8.5](#arrows--confusing) Avoid confusing arrow function syntax (`=>`) with comparison operators (`<=`, `>=`). eslint: [`no-confusing-arrow`](https://eslint.org/docs/rules/no-confusing-arrow)
+  - [8.5](#arrows--confusing) 避免箭头函数符号 (`=>`) 和比较运算符 (`<=`, `>=`) 的混淆。 eslint: [`no-confusing-arrow`](https://eslint.org/docs/rules/no-confusing-arrow)
 
     ```javascript
     // bad
@@ -1053,7 +1053,7 @@
     ```
 
   <a name="whitespace--implicit-arrow-linebreak"></a>
-  - [8.6](#whitespace--implicit-arrow-linebreak) Enforce the location of arrow function bodies with implicit returns. eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
+  - [8.6](#whitespace--implicit-arrow-linebreak) 注意带有隐式返回的箭头函数函数体的位置。 eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
 
     ```javascript
     // bad
@@ -1073,12 +1073,12 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Classes & Constructors
+## <a id="classes--constructors">类和构造器</a>
 
   <a name="constructors--use-class"></a><a name="9.1"></a>
-  - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
+  - [9.1](#constructors--use-class) 尽量使用 `class`. 避免直接操作 `prototype` .
 
-    > 为什么? `class` syntax is more concise and easier to reason about.
+    > 为什么? `class` 语法更简洁，更容易推理。
 
     ```javascript
     // bad
@@ -1105,9 +1105,9 @@
     ```
 
   <a name="constructors--extends"></a><a name="9.2"></a>
-  - [9.2](#constructors--extends) Use `extends` for inheritance.
+  - [9.2](#constructors--extends) 使用 `extends` 来扩展继承。
 
-    > 为什么? It is a built-in way to inherit prototype functionality without breaking `instanceof`.
+    > 为什么? 它是一个内置的方法，可以在不破坏 `instanceof` 的情况下继承原型功能。
 
     ```javascript
     // bad
@@ -1129,7 +1129,7 @@
     ```
 
   <a name="constructors--chaining"></a><a name="9.3"></a>
-  - [9.3](#constructors--chaining) Methods can return `this` to help with method chaining.
+  - [9.3](#constructors--chaining) 方法返回了 `this` 来供其内部方法调用。
 
     ```javascript
     // bad
@@ -1166,7 +1166,7 @@
     ```
 
   <a name="constructors--tostring"></a><a name="9.4"></a>
-  - [9.4](#constructors--tostring) It’s okay to write a custom `toString()` method, just make sure it works successfully and causes no side effects.
+  - [9.4](#constructors--tostring) 只要在确保能正常工作并且不产生任何副作用的情况下，编写一个自定义的 `toString()` 方法也是可以的。
 
     ```javascript
     class Jedi {
@@ -1185,7 +1185,7 @@
     ```
 
   <a name="constructors--no-useless"></a><a name="9.5"></a>
-  - [9.5](#constructors--no-useless) Classes have a default constructor if one is not specified. An empty constructor function or one that just delegates to a parent class is unnecessary. eslint: [`no-useless-constructor`](https://eslint.org/docs/rules/no-useless-constructor)
+  - [9.5](#constructors--no-useless) 如果没有指定类，则类具有默认的构造器。 一个空的构造器或是一个代表父类的函数是没有必要的。 eslint: [`no-useless-constructor`](https://eslint.org/docs/rules/no-useless-constructor)
 
     ```javascript
     // bad
@@ -1214,9 +1214,9 @@
     ```
 
   <a name="classes--no-duplicate-members"></a>
-  - [9.6](#classes--no-duplicate-members) Avoid duplicate class members. eslint: [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
+  - [9.6](#classes--no-duplicate-members) 避免定义重复的类成员。 eslint: [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
 
-    > 为什么? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
+    > 为什么? 重复的类成员声明将会默认倾向于最后一个 - 具有重复的类成员可以说是一个错误。
 
     ```javascript
     // bad
@@ -1238,12 +1238,12 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Modules
+## <a id="modules">模块</a>
 
   <a name="modules--use-them"></a><a name="10.1"></a>
-  - [10.1](#modules--use-them) Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
+  - [10.1](#modules--use-them) 你可能经常使用模块 (`import`/`export`) 在一些非标准模块的系统上。 你也可以在你喜欢的模块系统上相互转换。
 
-    > 为什么? Modules are the future, let’s start using the future now.
+    > 为什么? 模块是未来的趋势，让我们拥抱未来。
 
     ```javascript
     // bad
@@ -1260,9 +1260,9 @@
     ```
 
   <a name="modules--no-wildcard"></a><a name="10.2"></a>
-  - [10.2](#modules--no-wildcard) Do not use wildcard imports.
+  - [10.2](#modules--no-wildcard) 不要使用通配符导入。
 
-    > 为什么? This makes sure you have a single default export.
+    > 为什么? 这确定你有一个单独的默认导出。
 
     ```javascript
     // bad
@@ -1273,9 +1273,9 @@
     ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
-  - [10.3](#modules--no-export-from-import) And do not export directly from an import.
+  - [10.3](#modules--no-export-from-import) 不要直接从导入导出。
 
-    > 为什么? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+    > 为什么? 虽然写在一行很简洁，但是有一个明确的导入和一个明确的导出能够保证一致性。
 
     ```javascript
     // bad
@@ -1289,14 +1289,14 @@
     ```
 
   <a name="modules--no-duplicate-imports"></a>
-  - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
+  - [10.4](#modules--no-duplicate-imports) 只从一个路径导入所有需要的东西。
  eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
-    > 为什么? Having multiple lines that import from the same path can make code harder to maintain.
+    > 为什么? 从同一个路径导入多个行，使代码更难以维护。
 
     ```javascript
     // bad
     import foo from 'foo';
-    // … some other imports … //
+    // … 其他导入 … //
     import { named1, named2 } from 'foo';
 
     // good
@@ -1310,9 +1310,9 @@
     ```
 
   <a name="modules--no-mutable-exports"></a>
-  - [10.5](#modules--no-mutable-exports) Do not export mutable bindings.
+  - [10.5](#modules--no-mutable-exports) 不要导出可变的引用。
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
-    > 为什么? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
+    > 为什么? 在一般情况下，应该避免发生突变，但是在导出可变引用时及其容易发生突变。虽然在某些特殊情况下，可能需要这样，但是一般情况下只需要导出常量引用。
 
     ```javascript
     // bad
@@ -1325,9 +1325,9 @@
     ```
 
   <a name="modules--prefer-default-export"></a>
-  - [10.6](#modules--prefer-default-export) In modules with a single export, prefer default export over named export.
+  - [10.6](#modules--prefer-default-export) 在单个导出的模块中，选择默认模块而不是指定的导出。
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
-    > 为什么? To encourage more files that only ever export one thing, which is better for readability and maintainability.
+    > 为什么? 为了鼓励更多的文件只导出一件东西，这样可读性和可维护性更好。
 
     ```javascript
     // bad
@@ -1338,9 +1338,9 @@
     ```
 
   <a name="modules--imports-first"></a>
-  - [10.7](#modules--imports-first) Put all `import`s above non-import statements.
+  - [10.7](#modules--imports-first) 将所有的 `import`s 语句放在所有非导入语句的上边。
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
-    > 为什么? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
+    > 为什么? 由于所有的 `import`s 都被提前，保持他们在顶部是为了防止意外发生。
 
     ```javascript
     // bad
@@ -1357,9 +1357,9 @@
     ```
 
   <a name="modules--multiline-imports-over-newlines"></a>
-  - [10.8](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
+  - [10.8](#modules--multiline-imports-over-newlines) 多行导入应该像多行数组和对象一样缩进。
 
-    > 为什么? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+    > 为什么? 花括号和其他规范一样，遵循相同的缩进规则，后边的都好一样。
 
     ```javascript
     // bad
@@ -1376,9 +1376,9 @@
     ```
 
   <a name="modules--no-webpack-loader-syntax"></a>
-  - [10.9](#modules--no-webpack-loader-syntax) Disallow Webpack loader syntax in module import statements.
+  - [10.9](#modules--no-webpack-loader-syntax) 在模块导入语句中禁止使用 Webpack 加载器语法。
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
-    > 为什么? Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
+    > 为什么? 因为在导入语句中使用 webpack 语法，将代码和模块绑定在一起。应该在 `webpack.config.js` 中使用加载器语法。
 
     ```javascript
     // bad
@@ -1392,14 +1392,14 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Iterators and Generators
+## <a id="iterators-and-generators">迭代器和发生器</a>
 
   <a name="iterators--nope"></a><a name="11.1"></a>
-  - [11.1](#iterators--nope) Don’t use iterators. Prefer JavaScript’s higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
+  - [11.1](#iterators--nope) 不要使用迭代器。 你应该使用 JavaScript 的高阶函数代替 `for-in` 或者 `for-of`。 eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
 
-    > 为什么? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+    > 为什么? 这是我们强制的规则。 拥有返回值得纯函数比这个更容易解释。
 
-    > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
+    > 使用 `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... 遍历数组， 和使用 `Object.keys()` / `Object.values()` / `Object.entries()` 迭代你的对象生成数组。
 
     ```javascript
     const numbers = [1, 2, 3, 4, 5];
@@ -1439,14 +1439,14 @@
     ```
 
   <a name="generators--nope"></a><a name="11.2"></a>
-  - [11.2](#generators--nope) Don’t use generators for now.
+  - [11.2](#generators--nope) 不要使用发生器。
 
     > 为什么? They don’t transpile well to ES5.
 
   <a name="generators--spacing"></a>
-  - [11.3](#generators--spacing) If you must use generators, or if you disregard [our advice](#generators--nope), make sure their function signature is spaced properly. eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
+  - [11.3](#generators--spacing) 如果你必须使用发生器或者无视 [我们的建议](#generators--nope)，请确保他们的函数签名是正常的间隔。 eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
 
-    > 为什么? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
+    > 为什么? `function` 和 `*` 是同一个概念关键字的一部分 - `*` 不是 `function` 的修饰符， `function*` 是一个不同于 `function` 的构造器。
 
     ```javascript
     // bad
@@ -1506,10 +1506,10 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Properties
+## <a id="properties">属性</a>
 
   <a name="properties--dot"></a><a name="12.1"></a>
-  - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
+  - [12.1](#properties--dot) 访问属性时使用点符号。 eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
 
     ```javascript
     const luke = {
@@ -1525,7 +1525,7 @@
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
-  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
+  - [12.2](#properties--bracket) 使用变量访问属性时，使用 `[]`表示法。
 
     ```javascript
     const luke = {
@@ -1540,7 +1540,7 @@
     const isJedi = getProp('jedi');
     ```
   <a name="es2016-properties--exponentiation-operator"></a>
-  - [12.3](#es2016-properties--exponentiation-operator) Use exponentiation operator `**` when calculating exponentiations. eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
+  - [12.3](#es2016-properties--exponentiation-operator) 计算指数时，可以使用 `**` 运算符。 eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
 
     ```javascript
     // bad
@@ -1552,10 +1552,10 @@
 
 **[⬆ 返回目录](#table-of-contents)**
 
-## Variables
+## <a id="variables">变量</a>
 
   <a name="variables--const"></a><a name="13.1"></a>
-  - [13.1](#variables--const) Always use `const` or `let` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
+  - [13.1](#variables--const) 使用 `const` 或者 `let` 来定义变量。 不这样做将创建一个全局变量。 我们希望避免污染全局命名空间。 Captain Planet 警告过我们。 eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
 
     ```javascript
     // bad
@@ -1566,9 +1566,9 @@
     ```
 
   <a name="variables--one-const"></a><a name="13.2"></a>
-  - [13.2](#variables--one-const) Use one `const` or `let` declaration per variable. eslint: [`one-var`](https://eslint.org/docs/rules/one-var.html)
+  - [13.2](#variables--one-const) 使用 `const` 或者 `let` 声明每一个变量。 eslint: [`one-var`](https://eslint.org/docs/rules/one-var.html)
 
-    > 为什么? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+    > 为什么? 这样更容易添加新的变量声明，而且你不必担心是使用 `;` 还是使用 `,` 或引入标点符号的差别。 你可以通过 debugger 逐步查看每个声明，而不是立即跳过所有声明。
 
     ```javascript
     // bad
@@ -1589,9 +1589,9 @@
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
-  - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
+  - [13.3](#variables--const-let-group) 把 `const` 声明的放在一起，把 `let` 声明的放在一起。.
 
-    > 为什么? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > 为什么? 这在后边如果需要根据前边的赋值变量指定一个变量时很有用。
 
     ```javascript
     // bad
@@ -1615,12 +1615,12 @@
     ```
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
-  - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#variables--define-where-used) 在你需要的使用定义变量，但是要把它们放在一个合理的地方。
 
-    > 为什么? `let` and `const` are block scoped and not function scoped.
+    > 为什么? `let` 和 `const` 是块级作用域而不是函数作用域。
 
     ```javascript
-    // bad - unnecessary function call
+    // bad - 不必要的函数调用
     function checkName(hasName) {
       const name = getName();
 
@@ -1653,17 +1653,16 @@
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
-  - [13.5](#variables--no-chain-assignment) Don’t chain variable assignments. eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
+  - [13.5](#variables--no-chain-assignment) 不要链式变量赋值。 eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
-    > 为什么? Chaining variable assignments creates implicit global variables.
+    > 为什么? 链式变量赋值会创建隐式全局变量。
 
     ```javascript
     // bad
     (function example() {
-      // JavaScript interprets this as
+      // JavaScript 把它解释为
       // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
+      // let 关键词只适用于变量 a ；变量 b 和变量 c 则变成了全局变量。
       let a = b = c = 1;
     }());
 
@@ -1682,13 +1681,13 @@
     console.log(b); // throws ReferenceError
     console.log(c); // throws ReferenceError
 
-    // the same applies for `const`
+    // 对于 `const` 也一样
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
-  - [13.6](#variables--unary-increment-decrement) Avoid using unary increments and decrements (`++`, `--`). eslint [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
+  - [13.6](#variables--unary-increment-decrement) 避免使用不必要的递增和递减 (`++`, `--`)。 eslint [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
 
-    > 为什么? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+    > 为什么? 在eslint文档中，一元递增和递减语句以自动分号插入为主题，并且在应用程序中可能会导致默认值的递增或递减。它还可以用像 `num += 1` 这样的语句来改变您的值，而不是使用 `num++` 或 `num ++` 。不允许不必要的增量和减量语句也会使您无法预先递增/预递减值，这也会导致程序中的意外行为。
 
     ```javascript
     // bad
@@ -1720,7 +1719,7 @@
     ```
 
 <a name="variables--linebreak"></a>
-  - [13.7](#variables--linebreak) Avoid linebreaks before or after `=` in an assignment. If your assignment violates [`max-len`](https://eslint.org/docs/rules/max-len.html), surround the value in parens. eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
+  - [13.7](#variables--linebreak) 避免在赋值语句 `=` 前后换行。如果你的代码违反了 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 使用括号包裹。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
     > 为什么? Linebreaks surrounding `=` can obfuscate the value of an assignment.
 
