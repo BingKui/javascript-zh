@@ -106,7 +106,7 @@
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) 使用 `const` 定义你的所有引用；避免使用 `var`。 eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
-    > 为什么? 这样能够确保你不能从新分配你的引用，否则可能导致错误或者产生难以理解的代码。.
+    > 为什么? 这样能够确保你不能从新分配你的引用，否则可能导致错误或者产生难以理解的代码。.
 
     ```javascript
     // bad
