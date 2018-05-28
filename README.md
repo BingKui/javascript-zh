@@ -8,7 +8,7 @@
 [![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg)](https://www.npmjs.com/package/eslint-config-airbnb-base)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-本指南也提供了其他语言的版本。 查看 [翻译](#translation)
+<!-- 本指南也提供了其他语言的版本。 查看 [翻译](#translation) -->
 
 其他代码风格指南
 
