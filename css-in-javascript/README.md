@@ -1,20 +1,20 @@
-# Airbnb CSS-in-JavaScript Style Guide
+# Airbnb CSS-in-JavaScript 代码规范
 
-*A mostly reasonable approach to CSS-in-JavaScript*
+*一种 CSS-in-JavaScript 最合理的规范。*
 
-## Table of Contents
+## <a id="table-of-contents">目录</a>
 
-1. [Naming](#naming)
-1. [Ordering](#ordering)
-1. [Nesting](#nesting)
-1. [Inline](#inline)
-1. [Themes](#themes)
+1. [命名](#naming)
+1. [订阅](#ordering)
+1. [嵌套](#nesting)
+1. [内联](#inline)
+1. [主题](#themes)
 
-## Naming
+## <a id="naming">命名</a>
 
-  - Use camelCase for object keys (i.e. "selectors").
+  - 使用驼峰命名法给对象的 key 命名。 (i.e. "selectors")
 
-    > Why? We access these keys as properties on the `styles` object in the component, so it is most convenient to use camelCase.
+    > 为什么？ 我们在组件的 `styles` 对象上访问这些键作为属性，使用驼峰命名法最为方便。
 
     ```js
     // bad
@@ -32,9 +32,9 @@
     }
     ```
 
-  - Use an underscore for modifiers to other styles.
+  - 使用下划线标识修改为其他样式。
 
-    > Why? Similar to BEM, this naming convention makes it clear that the styles are intended to modify the element preceded by the underscore. Underscores do not need to be quoted, so they are preferred over other characters, such as dashes.
+    > 为什么？ 与 BEM 类似，这种约定清楚明确的表明，修改样式的元素是下划线之前的元素。下划线不需要引导，因此它比其他字符（如破折号）更受欢迎。
 
     ```js
     // bad
@@ -62,9 +62,9 @@
     }
     ```
 
-  - Use `selectorName_fallback` for sets of fallback styles.
+  - 使用 `selectorName_fallback` 设置回退样式集。
 
-    > Why? Similar to modifiers, keeping the naming consistent helps reveal the relationship of these styles to the styles that override them in more adequate browsers.
+    > 为什么？ 与修饰符类似，保持命名一致有助于揭示这些样式与在浏览器中覆盖它们的样式之间的关系。
 
     ```js
     // bad
@@ -90,9 +90,9 @@
     }
     ```
 
-  - Use a separate selector for sets of fallback styles.
+  - 使用单独的选择器设置备用样式集。
 
-    > Why? Keeping fallback styles contained in a separate object clarifies their purpose, which improves readability.
+    > 为什么？ 保留一个单独的对象中包含的回退样式可以明确它们的目的，从而提高可读性。
 
     ```js
     // bad
@@ -131,9 +131,9 @@
     }
     ```
 
-  - Use device-agnostic names (e.g. "small", "medium", and "large") to name media query breakpoints.
+  - 使用与设备无关的名字 (如： "small", "medium", and "large") 来命名媒体查询的断点。
 
-    > Why? Commonly used names like "phone", "tablet", and "desktop" do not match the characteristics of the devices in the real world. Using these names sets the wrong expectations.
+    > 为什么？ 常用的名字如： ”phone“, “tablet”，和 “desktop” 与现实世界的设备的特点不匹配。使用这些名字会带来错误的期望。
 
     ```js
     // bad
@@ -151,11 +151,11 @@
     };
     ```
 
-## Ordering
+## <a id="ordering">订阅</a>
 
-  - Define styles after the component.
+  - 在组件之后定义样式。
 
-    > Why? We use a higher-order component to theme our styles, which is naturally used after the component definition. Passing the styles object directly to this function reduces indirection.
+    > 为什么？ 使用一个高阶组件来定义我们的主题，这是在组件定义之后自然使用的。 将样式对象直接传递给这个函数可以减少间接性。
 
     ```jsx
     // bad
@@ -193,11 +193,11 @@
     }))(MyComponent);
     ```
 
-## Nesting
+## <a id="nesting">嵌套</a>
 
-  - Leave a blank line between adjacent blocks at the same indentation level.
+  - 在相同缩进级别的相邻块之间留下空白。
 
-    > Why? The whitespace improves readability and reduces the likelihood of merge conflicts.
+    > 为什么？ 空间可以提高可读性，减少合并冲突的可能性。
 
     ```js
     // bad
@@ -229,11 +229,10 @@
     }
     ```
 
-## Inline
+## <a id="inline">内联</a>
 
-  - Use inline styles for styles that have a high cardinality (e.g. uses the value of a prop) and not for styles that have a low cardinality.
-
-    > Why? Generating themed stylesheets can be expensive, so they are best for discrete sets of styles.
+  - 对于具有高基数的样式使用内联样式（例如：使用 prop 的值），而不是具有低基数的样式。
+    > 为什么？ 主题样式是非常昂贵的，因此对于不同类型的样式内联样式是最好的选择。
 
     ```jsx
     // bad
@@ -256,13 +255,13 @@
     }))(MyComponent);
     ```
 
-## Themes
+## <a id="themes">主题</a>
 
-  - Use an abstraction layer such as [react-with-styles](https://github.com/airbnb/react-with-styles) that enables theming. *react-with-styles gives us things like `withStyles()`, `ThemedStyleSheet`, and `css()` which are used in some of the examples in this document.*
+  - 可以使用一个如 [react-with-styles](https://github.com/airbnb/react-with-styles) 的抽象层启用主题。*react-with-styles 给了我们像 `withStyles()`， `ThemedStyleSheet`， 和 `css()` 的一些示例在它的文档中。*
 
-  > Why? It is useful to have a set of shared variables for styling your components. Using an abstraction layer makes this more convenient. Additionally, this can help prevent your components from being tightly coupled to any particular underlying implementation, which gives you more freedom.
+  > 为什么？ 有一组共享的变量来设计组件式有用的。 使用抽象层使其更方便。 此外，这有助于防止组件与任何特定的底层实现逻辑实现紧密耦合，从而使你获得更多的自由。
 
-  - Define colors only in themes.
+  - 只在主题中定义颜色。
 
     ```js
     // bad
@@ -280,7 +279,7 @@
     }))(MyComponent);
     ```
 
-  - Define fonts only in themes.
+  - 只在主题中定义字体。
 
     ```js
     // bad
@@ -298,7 +297,7 @@
     }))(MyComponent);
     ```
 
-  - Define fonts as sets of related styles.
+  - 将字体定义为相关样式集。
 
     ```js
     // bad
@@ -319,7 +318,7 @@
     }))(MyComponent);
     ```
 
-  - Define base grid units in theme (either as a value or a function that takes a multiplier).
+  - 在主题中定义基本网格单元（无论是作为一个值还是一个使用乘数的函数）。
 
     ```js
     // bad
@@ -344,7 +343,7 @@
     }))(MyComponent);
     ```
 
-  - Define media queries only in themes.
+  - 只在主题中定义媒体查询。
 
     ```js
     // bad
@@ -370,9 +369,9 @@
     }))(MyComponent);
     ```
 
-  - Define tricky fallback properties in themes.
+  - 在主题中定义棘手的回退属性。
 
-    > Why? Many CSS-in-JavaScript implementations merge style objects together which makes specifying fallbacks for the same property (e.g. `display`) a little tricky. To keep the approach unified, put these fallbacks in the theme.
+    > 为什么？ 许多 CSS-in-JavaScript 的实现中将样式对象合并在一起，这使得指定样式的属性（如： `display` ）回退有点棘手。 为了保持统一的方法，把这些回退属性放在主题中。
 
     ```js
     // bad
@@ -409,9 +408,9 @@
     }))(MyComponent);
     ```
 
-  - Create as few custom themes as possible. Many applications may only have one theme.
+  - 尽可能少的自定义主题。 许多应用只有一套主题。
 
-  - Namespace custom theme settings under a nested object with a unique and descriptive key.
+  - 自定义主题的命名空间是设置在一个具有独特和描述性的 key 之下的一个嵌套对象。
 
     ```js
     // bad
@@ -429,4 +428,4 @@
 
 ---
 
-CSS puns adapted from [Saijo George](https://saijogeorge.com/css-puns/).
+CSS 规则改编自 [Saijo George](https://saijogeorge.com/css-puns/).
