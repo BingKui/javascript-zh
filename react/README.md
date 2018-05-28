@@ -157,6 +157,8 @@
     <MyComponent variant="fancy" />
     ```
 
+    **[⬆ 返回目录](#table-of-contents)**
+
 ## <a id="declaration">声明模块</a>
 
   - 不要使用 `displayName` 来命名组件。 应该使用引用来命名组件。
@@ -172,6 +174,8 @@
     export default class ReservationCard extends React.Component {
     }
     ```
+
+    **[⬆ 返回目录](#table-of-contents)**
 
 ## <a id="alignment">代码对齐</a>
 
@@ -200,6 +204,8 @@
     </Foo>
     ```
 
+    **[⬆ 返回目录](#table-of-contents)**
+
 ## <a id="quotes">单引号和双引号</a>
 
   - 对于 JSX 属性总是使用双引号 （`"`）， 对于其他的 JS 来说使用单引号 （`'`）。 eslint: [`jsx-quotes`](https://eslint.org/docs/rules/jsx-quotes)
@@ -219,6 +225,8 @@
     // good
     <Foo style={{ left: '20px' }} />
     ```
+
+    **[⬆ 返回目录](#table-of-contents)**
 
 ## <a id="spacing">空格</a>
 
@@ -248,6 +256,8 @@
     // good
     <Foo bar={baz} />
     ```
+
+    **[⬆ 返回目录](#table-of-contents)**
 
 ## <a id="props">属性</a>
 
@@ -438,6 +448,8 @@
   }
   ```
 
+  **[⬆ 返回目录](#table-of-contents)**
+
 ## <a id="refs">Refs</a>
 
   - 总是在 ref 中使用回调函数。 eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
@@ -454,9 +466,11 @@
     />
     ```
 
-## Parentheses
+    **[⬆ 返回目录](#table-of-contents)**
 
-  - Wrap JSX tags in parentheses when they span more than one line. eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
+## <a id="parentheses">括号</a>
+
+  - 当存在多行时，使用括号包裹 JSX 标签。 eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
 
     ```jsx
     // bad
@@ -475,16 +489,18 @@
       );
     }
 
-    // good, when single line
+    // good, 当存在一行时
     render() {
       const body = <div>hello</div>;
       return <MyComponent>{body}</MyComponent>;
     }
     ```
 
-## Tags
+    **[⬆ 返回目录](#table-of-contents)**
 
-  - Always self-close tags that have no children. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+## <a id="tags">标签</a>
+
+  - 没有子节点的标签总是自闭和。 eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
 
     ```jsx
     // bad
@@ -494,7 +510,7 @@
     <Foo variant="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - 如果你的组件具有多行属性，请在新行上关闭标签。 eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // bad
@@ -509,9 +525,11 @@
     />
     ```
 
-## Methods
+    **[⬆ 返回目录](#table-of-contents)**
 
-  - Use arrow functions to close over local variables.
+## <a id="methods">方法</a>
+
+  - 使用箭头函数关闭局部变量。
 
     ```jsx
     function ItemList(props) {
@@ -528,9 +546,9 @@
     }
     ```
 
-  - Bind event handlers for the render method in the constructor. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+  - 在构造器中为 render 函数绑定处理方法。 eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
-    > Why? A bind call in the render path creates a brand new function on every single render.
+    > 为什么？ 渲染路径中的绑定函数会在每个渲染器上创建一个全新的函数。
 
     ```jsx
     // bad
@@ -562,8 +580,8 @@
     }
     ```
 
-  - Do not use underscore prefix for internal methods of a React component.
-    > Why? Underscore prefixes are sometimes used as a convention in other languages to denote privacy. But, unlike those languages, there is no native support for privacy in JavaScript, everything is public. Regardless of your intentions, adding underscore prefixes to your properties does not actually make them private, and any property (underscore-prefixed or not) should be treated as being public. See issues [#1024](https://github.com/airbnb/javascript/issues/1024), and [#490](https://github.com/airbnb/javascript/issues/490) for a more in-depth discussion.
+  - 不要在 React 组件的内部方法中使用下划线前缀。
+    > 为什么？ 下划线前缀有时被用作其他语言的约定来表示隐私。 但是，与其他语言不同， JavaScript 没有隐私的原生支持，所有东西都是公开的。 无论你是什么意图，在属性前添加下划线前缀并不会使它们成为私有属性，并且任何属性（有或者没有前缀）都应该被视为公共的。 可以查看问题 [#1024](https://github.com/airbnb/javascript/issues/1024)，和 [#490](https://github.com/airbnb/javascript/issues/490) 进行更深入的了解、讨论。
 
     ```jsx
     // bad
@@ -585,7 +603,7 @@
     }
     ```
 
-  - Be sure to return a value in your `render` methods. eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
+  - 确保你的 `render` 方法存在返回值。 eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
 
     ```jsx
     // bad
@@ -599,11 +617,13 @@
     }
     ```
 
-## Ordering
+    **[⬆ 返回目录](#table-of-contents)**
 
-  - Ordering for `class extends React.Component`:
+## <a id="ordering">函数生命周期</a>
 
-  1. optional `static` methods
+  - `class extends React.Component` 的函数生命周期:
+
+  1. 可选的 `static` 方法
   1. `constructor`
   1. `getChildContext`
   1. `componentWillMount`
@@ -613,12 +633,12 @@
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. *单击处理时间或者事件处理器* 像 `onClickSubmit()` 或者 `onChangeDescription()`
+  1. *对于 `render` 的 get 方法* 像 `getSelectReason()` 或者 `getFooterContent()`
+  1. *可选的 render 方法* 像 `renderNavigation()` 或者 `renderProfilePicture()`
   1. `render`
 
-  - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
+  - 如何定义 `propTypes`, `defaultProps`, `contextTypes`, 等...
 
     ```jsx
     import React from 'react';
@@ -650,7 +670,7 @@
     export default Link;
     ```
 
-  - Ordering for `React.createClass`: eslint: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
+  - `React.createClass` 的函数生命周期: eslint: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
 
   1. `displayName`
   1. `propTypes`
@@ -669,34 +689,19 @@
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. *单击处理时间或者事件处理器* 像 `onClickSubmit()` 或者 `onChangeDescription()`
+  1. *对于 `render` 的 get 方法* 像 `getSelectReason()` 或者 `getFooterContent()`
+  1. *可选的 render 方法* 像 `renderNavigation()` 或者 `renderProfilePicture()`
   1. `render`
+
+  **[⬆ 返回目录](#table-of-contents)**
 
 ## `isMounted`
 
-  - Do not use `isMounted`. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
+  - 不要使用 `isMounted`。 eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-  > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+  > 为什么？ [`isMounted` 是一种反模式][anti-pattern]，在使用 ES6 类定义的时候不可用，并且正在被正式弃用。
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
-## Translation
-
-  This JSX/React style guide is also available in other languages:
-
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [JasonBoy/javascript](https://github.com/JasonBoy/javascript/tree/master/react)
-  - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript/tree/master/react)
-  - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Español**: [agrcrobles/javascript](https://github.com/agrcrobles/javascript/tree/master/react)
-  - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide/tree/master/react)
-  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [apple77y/javascript](https://github.com/apple77y/javascript/tree/master/react)
-  - ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [pietraszekl/javascript](https://github.com/pietraszekl/javascript/tree/master/react)
-  - ![Br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Portuguese**: [ronal2do/javascript](https://github.com/ronal2do/airbnb-react-styleguide)
-  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [leonidlebedev/javascript-airbnb](https://github.com/leonidlebedev/javascript-airbnb/tree/master/react)
-  - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide/tree/master/react)
-  - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [alioguzhan/react-style-guide](https://github.com/alioguzhan/react-style-guide)
-  - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript/tree/master/react)
-  - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [uetcodecamp/jsx-style-guide](https://github.com/UETCodeCamp/jsx-style-guide)
-
-**[⬆ back to top](#table-of-contents)**
+    **[⬆ 返回目录](#table-of-contents)**
