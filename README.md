@@ -77,7 +77,7 @@
     console.log(foo, bar); // => 1, 9
     ```
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
+    - 标识符不能完全被支持，因此在针对不支持的浏览器或者环境时不应该使用它们。
 
   <a name="types--complex"></a><a name="1.2"></a>
   - [1.2](#types--complex)  **复杂类型**: 当你访问一个复杂类型的时候，你需要一个值得引用。
@@ -102,7 +102,7 @@
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) 使用 `const` 定义你的所有引用；避免使用 `var`。 eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
-    > 为什么? 这样能够确保你不能从新分配你的引用，否则可能导致错误或者产生难以理解的代码。.
+    > 为什么? 这样能够确保你不能重新赋值你的引用，否则可能导致错误或者产生难以理解的代码。.
 
     ```javascript
     // bad
@@ -115,7 +115,7 @@
     ```
 
   <a name="references--disallow-var"></a><a name="2.2"></a>
-  - [2.2](#references--disallow-var) 如果你必须重新分配你的引用， 使用 `let` 代替 `var`。 eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
+  - [2.2](#references--disallow-var) 如果你必须重新赋值你的引用， 使用 `let` 代替 `var`。 eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
 
     > 为什么? `let` 是块级作用域，而不像 `var` 是函数作用域.
 
@@ -825,9 +825,9 @@
     ```
 
   <a name="functions--reassign-params"></a><a name="7.13"></a>
-  - [7.13](#functions--reassign-params) 不要再分配参数。 eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
+  - [7.13](#functions--reassign-params) 不要再赋值参数。 eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
-    > 为什么? 重新分配参数会导致意外的行为，尤其是在访问 `arguments` 对象的时候。 它还可能导致性能优化问题，尤其是在 V8 中。
+    > 为什么? 重新赋值参数会导致意外的行为，尤其是在访问 `arguments` 对象的时候。 它还可能导致性能优化问题，尤其是在 V8 中。
 
     ```javascript
     // bad
@@ -1437,7 +1437,7 @@
   <a name="generators--nope"></a><a name="11.2"></a>
   - [11.2](#generators--nope) 不要使用发生器。
 
-    > 为什么? They don’t transpile well to ES5.
+    > 为什么? 它们不能很好的适应 ES5。
 
   <a name="generators--spacing"></a>
   - [11.3](#generators--spacing) 如果你必须使用发生器或者无视 [我们的建议](#generators--nope)，请确保他们的函数签名是正常的间隔。 eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
@@ -1717,7 +1717,7 @@
 <a name="variables--linebreak"></a>
   - [13.7](#variables--linebreak) 避免在赋值语句 `=` 前后换行。如果你的代码违反了 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 使用括号包裹。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
-    > 为什么? 在 `=` 前后换行，可能混淆分配的值。
+    > 为什么? 在 `=` 前后换行，可能混淆赋的值。
 
     ```javascript
     // bad
@@ -3237,7 +3237,7 @@
     ```
 
   <a name="naming--uppercase"></a>
-  - [23.10](#naming--uppercase) 你可以大写一个常亮，如果它：（1）被导出，（2）使用 `const` 定义（不能被重新分配），（3）程序员可以信任它（以及其嵌套的属性）是不变的。
+  - [23.10](#naming--uppercase) 你可以大写一个常亮，如果它：（1）被导出，（2）使用 `const` 定义（不能被重新赋值），（3）程序员可以信任它（以及其嵌套的属性）是不变的。
 
     > 为什么? 这是一个可以帮助程序员确定变量是否会发生变化的辅助工具。UPPERCASE_VARIABLES 可以让程序员知道他们可以相信变量（及其属性）不会改变。
     - 是否是对所有的 `const` 定义的变量？ - 这个是没哟必要的，不应该在文件中使用大学。但是，它应该用于导出常量。
