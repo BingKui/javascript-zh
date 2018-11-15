@@ -2451,7 +2451,7 @@
     ```
 
   <a name="whitespace--chains"></a><a name="18.6"></a>
-  - [19.6](#whitespace--chains) 在使用长方法连滴啊用的时候使用缩进(超过两个方法链)。 使用一个引导点，强调该行是方法调用，而不是新的语句。 eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
+  - [19.6](#whitespace--chains) 在使用链式方法调用的时候使用缩进(超过两个方法链)。 使用一个引导点，强调该行是方法调用，而不是新的语句。 eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
     // bad
