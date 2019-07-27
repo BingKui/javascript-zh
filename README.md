@@ -282,7 +282,7 @@
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) 不能直接调用 `Object.prototype` 的方法，如： `hasOwnProperty` 、 `propertyIsEnumerable` 和 `isPrototypeOf`。
 
-    > 为什么? 这些方法可能被一下问题对象的属性追踪 - 相应的有 `{ hasOwnProperty: false }` - 或者，对象是一个空对象 (`Object.create(null)`)。
+    > 为什么? 这些方法可能被以下问题对象的属性追踪 - 相应的有 `{ hasOwnProperty: false }` - 或者，对象是一个空对象 (`Object.create(null)`)。
 
     ```javascript
     // bad
